@@ -73,16 +73,8 @@
 			$email = $_POST[ 'email' ];
 			$pass = $_POST[ 'pass' ];
 
-			$done = "
-<center>
-<div class='alert alert-success fade in __web-inspector-hide-shortcut__'' style='margin-top:10px;'>
-<a href='#' class='close' data-dismiss='alert' aria-label='close' title='close'>&times;</a>
-<strong><h3 style='margin-top: 10px;
-margin-bottom: 10px;'> Register Successfully Complete. Now You Can Login With Your Email & Password</h3>
-</strong>
-</div>
-</center>
-";
+			$done = "<script>alert( 'Register Successfully Complete. Now You Can Login With Your Email & Password'); window.location = 'index.php';
+			</script>";
 
 			$sql = "INSERT INTO `studenttable` (`FName`, `LName`, `FaName`, `DOB`, `Addrs`, `Gender`, `PhNo`, `Eid`, `Pass`,`Course`) VALUES ('$fname','$lname','$faname','$dob','$addrs','$gender','$phno','$email','$pass','$course')";
 			//close the connection
@@ -90,7 +82,6 @@ margin-bottom: 10px;'> Register Successfully Complete. Now You Can Login With Yo
 
 			echo $done;
 		}
-
 		?>
 
 	</div>
@@ -211,3 +202,4 @@ Female</label>
 </div>
 <?php include('allfoot.php'); ?>
 
+		

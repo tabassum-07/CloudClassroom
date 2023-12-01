@@ -125,17 +125,16 @@ $sEno = $_SESSION[ "seno" ];
 				$tempq3 = $_POST[ 'Q3' ];
 				$tempq4 = $_POST[ 'Q4' ];
 				$tempq5 = $_POST[ 'Q5' ];
+
+				$done = "<script>alert( 'Assessment Have Submited.'); window.location = 'welcomestudent.php';
+				</script>";
+
 				$sql = "INSERT INTO `examans`(ExamID, Senrl, Sname, Ans1, Ans2, Ans3, 	Ans4, Ans5) VALUES ($Ex_id,'$sEno','$tempsname','$tempq1','$tempq2','$tempq3','$tempq4','$tempq5')";
 				if ( mysqli_query( $connect, $sql ) ) {
-					echo "<br>
-					<br><br>
-					<div class='alert alert-success fade in'>
-					<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-					<strong>Success!</strong> Assessment Have Submited.
-					</div>";
+					echo $done;
 				} else {
 					//error message if SQL query fails
-					echo "<br><Strong>Assessment Submitting Faliure. Try Again</strong><br> Error Details: " . $sql . "<br>" . mysqli_error( $connect );
+					echo "<script>alert( 'Assessment Submitting Faliure. Try Again. Error Details: " . $sql . "<br>" . mysqli_error( $connect )."');</script>"; 
 				} //close the connection
 				mysqli_close( $connect );
 			}

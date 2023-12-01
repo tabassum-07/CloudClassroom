@@ -19,6 +19,7 @@ $fname = $_SESSION["fname"];
 			<h3 class="text-center" style="padding-bottom: 0px;"> Welcome</h3>
 
 			<h3 class="text-center" style="padding-bottom: 20px; font-weight: bold; "> <?php echo $fname; ?></h3>
+			<!-- <h3 class="text-center" style="padding-bottom: 20px; font-weight: bold; "> <?php echo $PhNo; ?></h3> -->
 
 			<a href="mydetailsfaculty.php?myfid=<?php echo $userid ?>"><button href="" type="submit" class="btn btn-primary">My Details</button></a>
 

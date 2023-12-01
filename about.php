@@ -42,7 +42,29 @@
                 <div class="col-lg-12">
                     <h2 class="page-header">Our Teachers</h2>
                 </div>
+
+                <?php
+                include("database.php");
+                $sql = "select * from facutlytable";
+                $result = mysqli_query($connect, $sql);
+                while($row = mysqli_fetch_array($result)){
+                ?>
                 <div class="col-md-4 text-center">
+                    <div class="thumbnail">
+                        <!-- <img class="img-responsive" src="images/new/download (1).jpeg" alt=""> -->
+                        <div class="caption">
+                            <h3><?php echo $row['FName']; ?><br>
+                                <small>Teacher</small>
+                            </h3>
+                            <p>Our Computer teacher is my favorite teacher..</p>
+                        </div>
+                    </div>
+                </div>
+                <?php
+                }
+                ?>
+
+                <!-- <div class="col-md-4 text-center">
                     <div class="thumbnail">
                         <img class="img-responsive" src="images/new/download (1).jpeg" alt="">
                         <div class="caption">
@@ -114,13 +136,16 @@
 
                         </div>
                     </div>
-                </div>
+                </div> -->
+
+
+
             </div>
             <!-- /.row -->
 
             <!-- Our Customers -->
             <!-- Our Customers (Students) - Carousel -->
-            <div class="row">8
+            <div class="row">
                 <div class="col-lg-12">
                     <h2 class="page-header">Testimonials</h2>
                 </div>
@@ -136,33 +161,33 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
                             <div class="item active">
-                                <div class="row">
-                                    <div class="col-md-4 col-md-offset-2">
+                                <div class="row absTest">
+                                    <div class="col-md-6">
                                         <img class="img-responsive customer-img" src="images/welcome46.jpg" alt="Testimonial 1">
                                     </div>
-                                    <div class="col-md-4 text-right">
+                                    <div class="col-md-6">
                                         <p class="testimonial-text">"I had an amazing learning experience with Cloud Classroom. The instructors are knowledgeable, and the online platform is user-friendly."</p>
                                         <p class="testimonial-author">- John Doe</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="row">
-                                    <div class="col-md-4 col-md-offset-2">
+                                <div class="row absTest">
+                                    <div class="col-md-6">
                                         <img class="img-responsive customer-img" src="images/smilingFemaleStudent.jpg" alt="Testimonial 2">
                                     </div>
-                                    <div class="col-md-4 text-right">
+                                    <div class="col-md-6">
                                         <p class="testimonial-text">"The flexibility of online learning at Cloud Classroom allowed me to balance my studies with other commitments. Highly recommended!"</p>
                                         <p class="testimonial-author">- Jane Smith</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="row">
-                                    <div class="col-md-4 col-md-offset-2">
+                                <div class="row absTest">
+                                    <div class="col-md-6">
                                         <img class="img-responsive customer-img" src="images/Returning-Student.jpg" alt="Testimonial 3">
                                     </div>
-                                    <div class="col-md-4 text-right">
+                                    <div class="col-md-6">
                                         <p class="testimonial-text">"I appreciate the supportive and interactive learning environment. The Cloud Classroom team is dedicated to student success."</p>
                                         <p class="testimonial-author">- Alex Johnson</p>
                                     </div>

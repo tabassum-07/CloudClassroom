@@ -23,7 +23,7 @@ $userlname = $_SESSION[ "lname" ];
 
 			while ( $row = mysqli_fetch_array( $result ) ) {
 				?>
-			<form action="" method="POST" name="update">
+			<form action="" method="POST" name="updates">
 				
 				<div class="form-group">
 					Enrolment number : <?php echo $row['Eno']; ?>
@@ -50,13 +50,13 @@ $userlname = $_SESSION[ "lname" ];
 					D.O.B. : <input type="text" name="DOB" value="<?PHP echo $row['DOB'];?>" readonly><br>
 				</div>
 				<div class="form-group">
-					Phone Number : <input type="text" name="phno" value="<?PHP echo $row['PhNo'];?>" maxlength="10"><br>
+					Phone Number : <input type="tel" pattern="^\d{11}$" name="phno" value="<?PHP echo $row['PhNo'];?>" maxlength="11"><br>
 				</div>
 				<div class="form-group">
 					Email : <input type="text" name="email" value="<?PHP echo $row['Eid'];?>" readonly><br>
 				</div>
 				<div class="form-group">
-					Password : <input type="text" name="pass" value="<?PHP echo $row['Pass'];?>"><br>
+					Password : <input type="password" name="pass" value="<?PHP echo $row['Pass'];?>"><br>
 				</div><br>
 				<div class="form-group">
 
@@ -80,23 +80,20 @@ $userlname = $_SESSION[ "lname" ];
 				$tempphno = $_POST[ 'phno' ];
 				$tempeid = $_POST[ 'email' ];
 				$temppass = $_POST[ 'pass' ];
+
+				$done = "<script>alert( 'Update Success.'); window.location = 'welcomestudent.php';
+				</script>";
+
 				//below query will update the existing record of student
-				$sql = "UPDATE `studenttable` SET FName='$tempfname', LName='$templname', FaName='$tempfaname', Gender='$tempgender', Course='$tempcourse', Addrs='$tempaddrs', PhNo=$tempphno, Eid='$tempeid', Pass='$temppass'  WHERE Eno=$new3";
+				$sql = "UPDATE `studenttable` SET FName='$tempfname', LName='$templname', FaName='$tempfaname', Gender='$tempgender', Course='$tempcourse', Addrs='$tempaddrs', PhNo='$tempphno', Eid='$tempeid', Pass='$temppass'  WHERE Eno=$new3";
 
 
 				if ( mysqli_query( $connect, $sql ) ) {
-					echo "
-
-<br><br>
-<div class='alert alert-success fade in'>
-<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-<strong>Success!</strong> Student Details has been updated.
-</div>
-
-";
+					echo $done;
 				} else {
 					//below statement will print error if SQL query fail.
-					echo "<br><Strong>Student Updation Faliure. Try Again</strong><br> Error Details: " . $sql . "<br>" . mysqli_error( $connect );
+					echo "<script>alert( 'Update Submitting Faliure. Try Again. Error Details: " . $sql . "<br>" . mysqli_error( $connect )."');</script>"; 
+
 				}
 				//for close connection
 				mysqli_close( $connect );

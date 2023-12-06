@@ -49,4 +49,4 @@ while($row=mysqli_fetch_array($rs))
 			<a href="askquery.php?eid=<?php echo $userid;  ?>"> <button  href="" type="submit" class="btn btn-primary">Ask New Query</button></a>
 		</div>
 	</div>
-	<?php include('allfoot.php'); ?>
+	<?php include('footer.php'); ?>

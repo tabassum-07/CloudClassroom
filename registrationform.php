@@ -121,9 +121,12 @@
         <label>Course: <span style="color: #ff0000;">*</span></label>
         <select class="form-control" name="course" id="course">
             <option value="" selected disabled>Select a course</option>
-            <option value="Course1">Course 1</option>
-            <option value="Course2">Course 2</option>
-            <option value="Course3">Course 3</option>
+            <option value="Course1">HTML</option>
+            <option value="Course2">PHP</option>
+            <option value="Course3">SQL</option>
+			<option value="Course4">JavaScript</option>
+			<option value="Course5">Bootstrap</option>
+			<option value="Course6">jQuery</option>
             <!-- Add more options as needed -->
         </select>
         <p class="help-block"></p>
@@ -200,6 +203,6 @@ Female</label>
 		</div>
 	</div>
 </div>
-<?php include('allfoot.php'); ?>
+<?php include('footer.php'); ?>
 
 		

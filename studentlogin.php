@@ -3,7 +3,10 @@
 	<div class="row" style="padding-top: 100px;">
 		<div class="col-md-3"></div>
 		<div class="col-md-6">
+
 			<!-- Stdeunt login page -->
+			<div class="row" style="padding-top: 40px; padding-bottom: 150px;">
+
 			<fieldset>
 				<legend class="text-center">
 					<h3 style="padding-top: 25px;"><span class="glyphicon glyphicon-lock"></span>&nbsp;  Student Login</h3>
@@ -34,4 +37,5 @@ border-color: #D21B1B;">Reset</button>
 		</div>
 		<div class="col-md-3"></div>
 	</div>
-	<?php include('allfoot.php'); ?>
+	</div>
+	<?php include('footer.php'); ?>

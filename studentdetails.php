@@ -103,4 +103,4 @@ $userid = $_SESSION[ "umail" ];
 			<a href="addnewstudent"><button type="button" value="AddNewStudent" class="btn btn-info btn-sm">Add New Student</button></a>
 		</div>
 	</div>
-	<?php include('allfoot.php'); ?>
+	<?php include('footer.php'); ?>

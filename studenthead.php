@@ -42,13 +42,15 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index">Cloud Classrooms</a>
+                    <span class="navbar-brand">Cloud Classrooms</span>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
-                        <!-- <li><a href="index">Home</a></li>
-                        <li><a href="about">About</a></li> -->
+                        <li><a href="index">Home</a></li>
+                        <li><a href="about">About</a></li>
+
+
                         <li>
                             <a href="welcomestudent">Student Dashborad</a>
                         </li>
@@ -63,3 +65,4 @@
             <!-- /.container -->
         </nav>
     </header>
+</body>

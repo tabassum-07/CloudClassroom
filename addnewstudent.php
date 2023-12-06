@@ -102,4 +102,4 @@ $userid = $_SESSION[ "umail" ];
 			</form>
 		</div>
 	</div>
-	<?php include('allfoot.php'); ?>
+	<?php include('footer.php'); ?>

@@ -34,7 +34,7 @@ $userid = $_SESSION["umail"];
 				<div class="form-group">
 				Gender : <input type="text" name="gender" value="<?PHP echo $row['Gender'];?>"><br></div>
 				<div class="form-group">
-				Phone Number : <input type="tel" name="phno" value="<?PHP echo $row['PhNo'];?>" maxlength="10"><br></div>
+				Phone Number : <input type="tel" name="phno" value="<?PHP echo $row['PhNo'];?>" maxlength="11"><br></div>
 				<div class="form-group">
 				Joining Date : <input type="date" name="jdate" value="<?PHP echo $row['JDate'];?>" readonly> <br></div>
 				<div class="form-group">
@@ -59,25 +59,22 @@ $userid = $_SESSION["umail"];
 				$tempphno=$_POST['phno'];
 				$tempcity=$_POST['city'];
 				$temppass=$_POST['pass'];
+				$done = "<script>alert( 'Update Success.'); window.location = 'facultydetails.php';
+				</script>";
 				//below SQL query will update the existing faculty 
-				$sql="UPDATE `facutlytable` SET FName='$tempfname',FaName='$tempfaname',Addrs='$tempaddrs', Gender='$tempgender', City='$tempcity',Pass='$temppass', PhNo=$tempphno WHERE FID=$new2"; 
+				$sql="UPDATE `facutlytable` SET FName='$tempfname',FaName='$tempfaname',Addrs='$tempaddrs', Gender='$tempgender', City='$tempcity',Pass='$temppass', PhNo='$tempphno' WHERE FID='$new2' "; 
 				
-				if (mysqli_query($connect, $sql)) {
-					echo "<br>
+				if ( mysqli_query( $connect, $sql ) ) {
+					echo $done;
+				} else {
+					//below statement will print error if SQL query fail.
+					echo "<script>alert( 'Update Submitting Faliure. Try Again. Error Details: " . $sql . "<br>" . mysqli_error( $connect )."');</script>"; 
 
-					<br><br>
-					<div class='alert alert-success fade in'>
-					<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-					<strong>Success!</strong> Faculty Details updated has been deleted.
-					</div>";
-					} else {
-					// below statement will print error
-					echo "<br><Strong>Faculty Details Updating Faliure. Try Again</strong><br> Error Details: " . $sql . "<br>" . mysqli_error($connect);
-					}
+				}
 				//for close connection
 					mysqli_close($connect);
 						} 
 				?>
             </div>
 	</div>
-<?php include('allfoot.php'); ?>
+	<?php include('footer.php'); ?>

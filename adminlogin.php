@@ -4,10 +4,14 @@
 		<div class="col-md-3"></div>
 		<div class="col-md-6">
 			<fieldset>
-			<legend class="text-center">
-					<h3 style="padding-top: 25px;"><span class="glyphicon glyphicon-lock"></span>&nbsp;Admin Login</h3>
-				</legend>
+
 				<!-- Admin login form -->
+				<div class="row" style="padding-top: 40px; padding-bottom: 150px;">
+				<legend class="text-center">
+				<h3 style="padding-top: 25px;"><span class="glyphicon glyphicon-lock"></span>&nbsp;Admin
+				Login</h3>
+				</legend>
+
 				<form name="adminlogin" action="loginlinkadmin.php" method="POST">
 					<div class="control-group form-group">
 						<div class="controls">
@@ -34,4 +38,5 @@
 		</div>
 		<div class="col-md-3"></div>
 	</div>
-	<?php include('allfoot.php'); ?>
+	</div>
+	<?php include('footer.php'); ?>

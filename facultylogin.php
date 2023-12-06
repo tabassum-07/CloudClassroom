@@ -5,7 +5,9 @@
 		<div class="col-md-3"></div>
 		<div class="col-md-6">
 			<fieldset>
+				
 				<!-- Faculty login page -->
+				<div class="row" style="padding-top: 40px; padding-bottom: 150px;">
 				<legend class="text-center">
 					<h3 style="padding-top: 25px;"><span class="glyphicon glyphicon-lock"></span>&nbsp;  Faculty Login</h3>
 				</legend>
@@ -24,15 +26,19 @@
 							<p class="help-block"></p>
 						</div>
 					</div>
+
 					<center>
 						<button type="submit" class="btn btn-primary">Login</button>
 						<button type="reset" class="btn btn-primary" style="
     background-color: #E52727;
     border-color: #D21B1B;">Reset</button>
 					</center>
+
 			</fieldset>
 			</form>
 		</div>
 		<div class="col-md-3"></div>
 	</div>
-	<?php include('allfoot.php'); ?>
+	</div>
+
+	<?php include('footer.php'); ?>

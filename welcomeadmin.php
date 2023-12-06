@@ -34,4 +34,4 @@ $userid = $_SESSION[ "umail" ];
 		</div>
 		<div class="col-md-2"></div>
 	</div>
-	<?php include('allfoot.php'); ?>
+	<?php include('footer.php'); ?>

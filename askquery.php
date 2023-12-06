@@ -74,4 +74,4 @@ $eid=$_GET['eid']; //get data form another page
 			?>
 		</div>
 	</div>
-	<?php include('allfoot.php'); ?>
+	<?php include('footer.php'); ?>

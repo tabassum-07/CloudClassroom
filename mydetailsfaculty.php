@@ -82,12 +82,12 @@ $fname = $_SESSION[ "fname" ];
 							<td>
 								<?PHP echo $row['PhNo'];?> </td>
 						</tr>
-						<tr>
+						<!-- <tr>
 							<td><strong>Password :</strong> </td>
 							<td>
-								<?PHP echo $row['Pass'];?>
+							<?PHP echo $row['Pass'];?>
 							</td>
-						</tr>
+						</tr> -->
 						<tr>
 							<td><a href="updatedetailsfromfaculty.php?myfid=<?php echo $row['FID']; ?>"><input type="button" Value="Edit" class="btn btn-info btn-sm"></a></td>
 							
@@ -100,4 +100,4 @@ $fname = $_SESSION[ "fname" ];
 			?>
 		</div>
 	</div>
-	<?php include('allfoot.php'); ?>
+	<?php include('footer.php'); ?>

@@ -49,4 +49,4 @@ $userlname = $_SESSION[ "lname" ];
 			
 		</div>
 	</div>
-	<?php include('allfoot.php'); ?>
+	<?php include('footer.php'); ?>

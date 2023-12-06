@@ -13,13 +13,14 @@ $userlname = $_SESSION[ "lname" ];
 <div class="container">
 	<div class="row">
 		<div class="col-md-8">
-			<h3> <a href="welcomestudent.php" <?php echo "<span style='color:red'>".$userfname." ".$userlname."</span>";?> </a></h3>
+		<h3><a href="welcomestudent.php"><span style='color:red'><?php echo $userfname." ".$userlname; ?></span></a></h3>
+
 			<?php 
 
 include('database.php');
-$seno=$_GET['seno'];
+$sEno = isset($_GET['seno']) ? $_GET['seno'] : null;
 //below query will print the existing record of result
-$sql="SELECT * FROM result WHERE Eno='$seno'";
+$sql="SELECT * FROM result WHERE Eno='$sEno'";
 $rs=mysqli_query($connect,$sql);
 echo "<h2 class='page-header'>Result View</h2>";
 echo "<table class='table table-striped' style='width:100%'>
@@ -50,4 +51,4 @@ while($row=mysqli_fetch_array($rs))
 			</table>
 		</div>
 	</div>
-	<?php include('allfoot.php'); ?>
+	<?php include('footer.php'); ?>

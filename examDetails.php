@@ -97,4 +97,4 @@ $fname = $_SESSION[ "fname" ];
 			
 		</div>
 	</div>
-	<?php include('allfoot.php');  ?>
+	<?php include('footer.php'); ?>

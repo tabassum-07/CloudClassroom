@@ -54,45 +54,46 @@
 				<div class="col-md-6">
 					<img class="img-responsive" src="images/7fb1f193435815a86c8484f82b9589e1 - Copy.jpg" alt="">
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-6" style="margin-top: 40px;"> <!-- Add margin-top here -->
 					<h2>About Us</h2>
-					<p>The <strong>“Cloud Classroom”</strong> Website (web based application) is useful for the
-						students, , guest whomever likes to learn from web using E-Learn
-						(Videos), as well Check result, schedules of assessment and all that task like
-						event, news, students can find out list of fresh courses offered by them and
-						admission procedure, discussion forum, fee structure etc. without going to
-						institute. It provides the facility to the students or guest to have complete
-						information about the institute.</p><br>
-						<a href="about" class="btn btn-default">Learn More</a>
+					<div style="margin-top: 20px;">
+					<p>Unlike traditional educational platforms, Cloud Classroom is not just a website; it's a community of learners and educators dedicated to the pursuit of knowledge. We understand the challenges students face, and we're here to provide a free and inclusive online learning experience.</p><br>
+					<a href="about" class="btn btn-default">Learn More</a>
 				</div>
 			</div>
 		</div>
 	</div>
-
+	</div>
 	<div class="row  bg-success" style="padding-top: 50px; padding-bottom: 50px;">
 		<div class="col-md-12 text-center">
 			<div class="ss">
 				<h2>Objectives</h2>
 				<div class="ss">
-						<p>Keep records of all Students, Faculty, Admin & Guest.</p>
-						<p>To make the institute truly a paperless institute.</p>
-						<p>To learn from by watching videos (e-learn).</p>
-						<p>To make the institute truly a Cloud Based Institute.</p>
-						<p>For reducing manual work and mental conflict.</p>
+					<p>Make quality education universally accessible.</p>
+					<p>Knowledge knows no boundaries.</p>
+					<p>To learn from by watching videos (e-learn).</p>
+					<p>Especially dedicated to those facing financial constraints.</p>
 				</div>
 			</div>
 		</div>
 	</div>
 
 
-	</div>
-	<!-- /.row -->
+</div>
+<!-- /.row -->
 
+</style>
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
 
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
 
+        <!-- Script to Activate the Carousel -->
+        <script>
+            $('.carousel').carousel({
+                interval: 4000 //changes the speed
+            })
+        </script>
 
-
-	<hr>
-
-
-	<?php include('allfoot.php'); ?>
+<?php include('footer.php'); ?>

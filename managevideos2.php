@@ -96,4 +96,4 @@ $fname = $_SESSION[ "fname" ];
 			</fieldset>
 		</div>
 	</div>
-	<?php include('allfoot.php');  ?>
+	<?php include('footer.php'); ?>

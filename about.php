@@ -24,13 +24,9 @@
         </div> -->
                 <div class="col-md-12">
                     <h2>Our Cloud Classrom</h2>
-                    <p>The <strong>“Cloud Classroom”</strong> Website (web based application) is useful for the
-                        students, , guest whomever likes to learn from web using E-Learn
-                        (Videos), as well Check result, schedules of assessment and all that task like
-                        event, news, students can find out list of fresh courses offered by them and
-                        admission procedure, discussion forum, fee structure etc. without going to
-                        institute. It provides the facility to the students or guest to have complete
-                        information about the institute.</p><br>
+                    <p>The <strong>“Cloud Classroom”</strong> is not just a website; it's a community of learners and educators dedicated to the pursuit of knowledge. We understand the challenges students face, and we're here to provide a free and inclusive online learning experience.</p><br>
+
+                    <p>We are driven by a singular mission to make quality education accessible to all. We believe that knowledge knows no boundaries, and we are committed to breaking down barriers to learning, especially for those who face financial constraints.</p><br>
                     <p>
                         In this application, student can attend his\her missed classes from e-learn.</p>
                 </div>
@@ -47,22 +43,23 @@
                 include("database.php");
                 $sql = "select * from facutlytable";
                 $result = mysqli_query($connect, $sql);
-                while($row = mysqli_fetch_array($result)){
-                ?>
-                <div class="col-md-4 text-center">
-                    <div class="thumbnail">
-                        <!-- <img class="img-responsive" src="images/new/download (1).jpeg" alt=""> -->
-                        <div class="caption">
-                            <h3><?php echo $row['FName']; ?><br>
-                                <small>Teacher</small>
-                            </h3>
-                            <p>Our Computer teacher is my favorite teacher..</p>
+                while ($row = mysqli_fetch_array($result)) {
+                    ?>
+                    <div class="col-md-4 text-center">
+                        <div class="thumbnail">
+                            <!-- <img class="img-responsive" src="images/new/download (1).jpeg" alt=""> -->
+                            <div class="caption">
+                                <h3><?php echo $row['FName']; ?><br>
+                                    <small><?php echo $row['Occupation']; ?></small>
+                                </h3>
+                                <p><?php echo $row['Description']; ?></p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <?php
+                    <?php
                 }
                 ?>
+                
 
                 <!-- <div class="col-md-4 text-center">
                     <div class="thumbnail">
@@ -208,33 +205,14 @@
                 </div>
             </div>
 
-
-
-
-
             <!-- /.row -->
 
             <hr>
-            <!-- Footer -->
-            <footer>
-
-                <p class="footer text-center">Copyright &copy; Cloud Classroom 2023 <strong>MCA</strong> project Made by <strong>Ti & Na</strong></p>
-
-            </footer>
+           
 
         </div>
         <!-- /.container -->
-        <style>
-            .footer {
-                background: #000;
-                padding: 10px 0px;
-                color: #fff;
-                position: fixed;
-                left: 0;
-                right: 0;
-                bottom: -10px;
-            }
-        </style>
+       
         <!-- jQuery -->
         <script src="js/jquery.js"></script>
 
@@ -247,7 +225,7 @@
                 interval: 5000 //changes the speed
             })
         </script>
-
+<?php include('footer.php'); ?>
         </body>
 
         </html>

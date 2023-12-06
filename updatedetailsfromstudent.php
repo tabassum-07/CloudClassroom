@@ -85,7 +85,7 @@ $userlname = $_SESSION[ "lname" ];
 				</script>";
 
 				//below query will update the existing record of student
-				$sql = "UPDATE `studenttable` SET FName='$tempfname', LName='$templname', FaName='$tempfaname', Gender='$tempgender', Course='$tempcourse', Addrs='$tempaddrs', PhNo='$tempphno', Eid='$tempeid', Pass='$temppass'  WHERE Eno=$new3";
+				$sql = "UPDATE `studenttable` SET FName='$tempfname', LName='$templname', FaName='$tempfaname', Gender='$tempgender', Course='$tempcourse', Addrs='$tempaddrs', PhNo='$tempphno', Eid='$tempeid', Pass='$temppass'  WHERE Eno='$new3' ";
 
 
 				if ( mysqli_query( $connect, $sql ) ) {
@@ -102,4 +102,4 @@ $userlname = $_SESSION[ "lname" ];
 			?>
 		</div>
 	</div>
-	<?php include('allfoot.php'); ?>
+	<?php include('footer.php'); ?>

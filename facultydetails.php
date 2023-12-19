@@ -47,19 +47,20 @@ $userid = $_SESSION[ "umail" ];
 			$result = mysqli_query( $connect, $sql );
 			echo "<h3 class='page-header' >Facutly Details</h3>";
 			echo "<table class='table table-striped' style='width:100%'>
-				<tr>
-					<th>ID</th>
-					<th>First Name</th>
-					<th>Father Name</th>
-					<th>Addrs</th>
-					<th>Gender</th>
-					<th>Joining Date</th>
-					<th>City</th>
-					<th>Phone Number</th>
-					<th>Password</th>
-					<th>Edit</th>
-					<th>Delete</th>
-				<tr>";
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Addrs</th>
+        <th>Gender</th>
+        <th>Joining Date</th>
+        <th>City</th>
+        <th>Phone Number</th>
+        <th>Occupation</th>
+        <th>Description</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>";
 			while ( $row = mysqli_fetch_array( $result ) ) {
 				?>
 
@@ -71,7 +72,7 @@ $userid = $_SESSION[ "umail" ];
 					<?PHP echo $row['FName'];?>
 				</td>
 				<td>
-					<?PHP echo $row['FaName'];?>
+					<?PHP echo $row['Email'];?>
 				</td>
 				<td>
 					<?PHP echo $row['Addrs'];?>
@@ -88,9 +89,14 @@ $userid = $_SESSION[ "umail" ];
 				<td>
 					<?PHP echo $row['PhNo'];?>
 				</td>
-				<td>
-					<?PHP echo $row['Pass'];?>
+
+				 <td> 
+					<?PHP echo $row['Occupation'];?> 
 				</td>
+				<td> 
+					<?PHP echo $row['Description'];?> 
+				</td>
+				
 				<td><a href="updatefaculty.php?fid=<?php echo $row['FID']; ?>"><input type="button" Value="Edit" class="btn btn-info btn-sm"></a>
 				</td>
 				<td><a href="facultydetails.php?deleteid=<?php echo $row['FID']; ?>"><input type="button" Value="Delete" class="btn btn-info btn-sm"></a>

@@ -21,13 +21,6 @@ $fname = $_SESSION["fname"];
 
 			<div class="col-md-12 text-center" style= "padding-top: 50px; padding-bottom: 50px;">
 
-    <!-- Add an image before the faculty name -->
-    <img src="faculty_image.jpg" alt="Faculty Image" style="max-width: 100px; max-height: 100px; border-radius: 50%;">
-    <h3 class="text-center" style="padding-bottom: 0px;"> Welcome</h3>
-    <h3 class="text-center" style="padding-bottom: 20px; font-weight: bold; ">
-        <?php echo $fname; ?>
-    </h3>
-	
     <!-- ... (rest of your code) ... -->
 
 

@@ -51,4 +51,5 @@ while($row=mysqli_fetch_array($rs))
 			</table>
 		</div>
 	</div>
+	</div>
 	<?php include('footer.php'); ?>

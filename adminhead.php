@@ -43,13 +43,14 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="index">Cloud Classrooms</a>
-                <a class="navbar-brand" href="welcomeadmin">Admin Dashboard</a>
+                
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    
+                <a class="navbar-brand" href="welcomeadmin">Admin Dashboard</a>
                   <li>
+                  
                        <a href="logoutadmin" style="font-size: x-large;"><span class="glyphicon glyphicon-off title=" title="logout"></span> </a>
                        
                     </li>			

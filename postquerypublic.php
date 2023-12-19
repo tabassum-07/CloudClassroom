@@ -3,30 +3,31 @@
 	<script>
 		//java script valadtion for e-mail, query field, guest name
 		function validateFormPublicQuery() {
-			var email = document.forms[ "update" ][ "email" ].value;
-			var query = document.forms[ "update" ][ "queryx" ].value;
-			var query = document.forms[ "update" ][ "gname" ].value;
-			if ( email == null || email == "" ) {
-				alert( "Email Address must be filled out" );
+			var email = document.forms["update"]["email"].value;
+			var query = document.forms["update"]["squeryx"].value;
+			var gname = document.forms["update"]["gname"].value;
+
+			if (email == null || email == "") {
+				alert("Email Address must be filled out");
 				return false;
 			}
-			if ( query == null || query == "" ) {
-				alert( "Query field must be filled out" );
+			if (query == null || query == "") {
+				alert("Query field must be filled out");
 				return false;
 			}
-			if ( gname == null || gname == "" ) {
-				alert( "Full Name must be filled out" );
+			if (gname == null || gname == "") {
+				alert("Full Name must be filled out");
 				return false;
 			}
 		}
 	</script>
 	<div class="row">
-		<div class="col-md-8">
+		<div class="col-md-8" style="padding-top: 50px;">
 			<h3> Guest</h3>
 			<form action="" method="POST" name="update" onsubmit="return validateFormPublicQuery()">
 				<fieldset>
 					<legend>
-						<h3 style="padding-top: 25px;"> Post Query Details </h3>
+						<h3 style="padding-top: 15px;"> Post Query Details </h3>
 					</legend>
 					<div class="control-group form-group">
 						<div class="controls">
@@ -42,7 +43,7 @@
 						</div>
 					</div>
 
-					<div class="control-group form-group">
+					<div class="control-group form-group" style="padding-top: 20px;">
 						<div class="controls">
 							<label>Query : </label>
 							<textarea class="form-control" rows="5" cols="40" id="queryx" name="squeryx" maxlength="200"></textarea>
@@ -55,29 +56,37 @@
 				</fieldset>
 			</form>
 			<?php
-			if ( isset( $_POST[ 'update' ] ) ) {
-				include( 'database.php' );
-				$tempsquery = $_POST[ 'squeryx' ];
-				$tempseid = $_POST[ 'email' ];
-				$tempgname = $_POST[ 'gnamex' ];
+			if (isset($_POST['update'])) {
+				include('database.php');
+				$tempsquery = $_POST['squeryx'];
+				$tempseid = $_POST['email'];
+				$tempgname = $_POST['gnamex'];
 				$sql = "INSERT INTO `query`(`Query`, `Eid`) VALUES ('$tempsquery','$tempseid')";
 				$sql2 = "INSERT INTO `guest`(`Gname`, `GuEid`) VALUES ('$tempgname','$tempseid')";
-				mysqli_query( $connect, $sql2 );
-				if ( mysqli_query( $connect, $sql ) ) {
-					echo "<br>
-<br><br>
-<div class='alert alert-success fade in'>
-<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-<strong>Success!</strong> Your Query Added Successfully. Reff. No: " . mysqli_insert_id( $connect ) . "
-</div>";
+
+				mysqli_query($connect, $sql2);
+
+				if (mysqli_query($connect, $sql)) {
+					$inserted_id = mysqli_insert_id($connect);
+					mysqli_close($connect);
+
+					// Show a JavaScript alert
+					echo "<script>
+                alert('Your Query Added Successfully. Reff. No: $inserted_id');
+                window.location.href = 'about.php'; // Redirect to about page
+              </script>";
+					exit; // Stop further execution to prevent the HTML below from being sent
 				} else {
-					//error message if SQL query fails
-					echo "<br><Strong>Query Addeding Faliure. Try Again</strong><br> Error Details: " . $sql . "<br>" . mysqli_error( $connect );
+					// Error message if SQL query fails
+					echo "<br><strong>Query Adding Failure. Try Again</strong><br> Error Details: " . $sql . "<br>" . mysqli_error($connect);
 				}
-				//close the connection
-				mysqli_close( $connect );
+				mysqli_close($connect);
 			}
 			?>
-			</div>
+
 		</div>
-		<?php include('footer.php'); ?>
+	</div>
+</div>
+<h3 style="padding-top: 30px;"></h3>
+
+<?php include('footer.php'); ?>

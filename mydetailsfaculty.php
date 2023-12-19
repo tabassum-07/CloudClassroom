@@ -44,9 +44,9 @@ $fname = $_SESSION[ "fname" ];
 						</tr>
 						</tr>
 						<tr>
-							<td><strong>Father Name :</strong> </td>
+							<td><strong>Email :</strong> </td>
 							<td>
-								<?PHP echo $row['FaName'];?>
+								<?PHP echo $row['Email'];?>
 							</td>
 						</tr>
 						<tr>

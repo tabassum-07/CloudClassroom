@@ -24,6 +24,7 @@
         </div> -->
                 <div class="col-md-12">
                     <h2>Our Cloud Classrom</h2>
+
                     <p>The <strong>“Cloud Classroom”</strong> is not just a website; it's a community of learners and educators dedicated to the pursuit of knowledge. We understand the challenges students face, and we're here to provide a free and inclusive online learning experience.</p><br>
 
                     <p>We are driven by a singular mission to make quality education accessible to all. We believe that knowledge knows no boundaries, and we are committed to breaking down barriers to learning, especially for those who face financial constraints.</p><br>
@@ -33,7 +34,47 @@
             </div>
             <!-- /.row -->
 
-            <!-- Team Members -->
+
+
+            <!-- /.row -->
+
+            <style>
+                .grey-bg {
+                    background-color: #f2f2f2;
+                    /* Light grey color */
+                }
+            </style>
+
+            <!-- Our Courses -->
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header">Our Courses</h2>
+    </div>
+
+    <?php
+    include("database.php"); // Ensure that this file has the database connection code
+
+    $sql = "SELECT * FROM courses";
+    $result = mysqli_query($connect, $sql);
+
+    while ($row = mysqli_fetch_assoc($result)) {
+    ?>
+        <div class="col-md-4">
+            <div class="thumbnail grey-bg">
+                <div class="caption">
+                    <h3><?php echo $row['title']; ?><br>
+                        <small><?php echo $row['category']; ?></small>
+                    </h3>
+                    <p><?php echo $row['description']; ?></p>
+                </div>
+            </div>
+        </div>
+    <?php
+    }
+    ?>
+</div>
+
+            <!-- Teachers -->
             <div class="row">
                 <div class="col-lg-12">
                     <h2 class="page-header">Our Teachers</h2>
@@ -44,8 +85,8 @@
                 $sql = "select * from facutlytable";
                 $result = mysqli_query($connect, $sql);
                 while ($row = mysqli_fetch_array($result)) {
-                    ?>
-                    <div class="col-md-4 text-center">
+                ?>
+                    <div class="col-md-4">
                         <div class="thumbnail">
                             <!-- <img class="img-responsive" src="images/new/download (1).jpeg" alt=""> -->
                             <div class="caption">
@@ -56,92 +97,13 @@
                             </div>
                         </div>
                     </div>
-                    <?php
+                <?php
                 }
                 ?>
-                
-
-                <!-- <div class="col-md-4 text-center">
-                    <div class="thumbnail">
-                        <img class="img-responsive" src="images/new/download (1).jpeg" alt="">
-                        <div class="caption">
-                            <h3>Jubayer Mahmud<br>
-                                <small>Teacher</small>
-                            </h3>
-                            <p>Our Computer teacher is my favorite teacher..</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center">
-                    <div class="thumbnail">
-                        <img class="img-responsive" src="images/new/images.jpeg" alt="">
-                        <div class="caption">
-                            <h3>Shaikh Khan<br>
-                                <small>Teacher</small>
-                            </h3>
-                            <p>Because of my Science Teacher, Science has become my favorite subject too..</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center">
-                    <div class="thumbnail">
-                        <img class="img-responsive" src="images/new/download (2).jpeg" alt="">
-                        <div class="caption">
-                            <h3>Farhan Rashid<br>
-                                <small>Teacher</small>
-                            </h3>
-                            <p>No one in our class has failed in Science because of his teaching.</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center">
-                    <div class="thumbnail">
-                        <img class="img-responsive" src="images/new/teacher2.jpg" alt="">
-                        <div class="caption">
-                            <h3>Farhana Islam<br>
-                                <small>Teacher</small>
-                            </h3>
-                            <p>Our Science teacher is my favorite teacher.</p>
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center">
-                    <div class="thumbnail">
-                        <img class="img-responsive" src="images/new/teacher222223.jpg" alt="">
-                        <div class="caption">
-                            <h3>Rita Ahmed<br>
-                                <small>Teacher</small>
-                            </h3>
-                            <p>He is very kind to all the students.</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center">
-                    <div class="thumbnail">
-                        <img class="img-responsive" src="images/new/20160518144520.jpg" alt="">
-                        <div class="caption">
-                            <h3>Suchi Saha<br>
-                                <small>Teacher</small>
-                            </h3>
-                            <p>He teaches the lessons every day and keeps tests regularly.</p>
-
-                        </div>
-                    </div>
-                </div> -->
-
-
-
             </div>
-            <!-- /.row -->
 
-            <!-- Our Customers -->
-            <!-- Our Customers (Students) - Carousel -->
+            <!-- Testimonials -->
+
             <div class="row">
                 <div class="col-lg-12">
                     <h2 class="page-header">Testimonials</h2>
@@ -208,11 +170,11 @@
             <!-- /.row -->
 
             <hr>
-           
+
 
         </div>
         <!-- /.container -->
-       
+
         <!-- jQuery -->
         <script src="js/jquery.js"></script>
 
@@ -225,7 +187,7 @@
                 interval: 5000 //changes the speed
             })
         </script>
-<?php include('footer.php'); ?>
+        <?php include('footer.php'); ?>
         </body>
 
         </html>

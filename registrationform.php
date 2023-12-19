@@ -2,87 +2,106 @@
 <script>
 	//javascript validation for various fildss
 	function validateForm() {
-		var fname = document.forms[ "register" ][ "fname" ].value;
-		var lname = document.forms[ "register" ][ "lname" ].value;
-		var faname = document.forms[ "register" ][ "faname" ].value;
-		var course = document.forms[ "register" ][ "course" ].value;
-		var dob = document.forms[ "register" ][ "dob" ].value;
-		var addrs = document.forms[ "register" ][ "addrs" ].value;
-		var gender = document.forms[ "register" ][ "gender" ].value;
-		var phno = document.forms[ "register" ][ "phno" ].value;
-		var x = document.forms[ "register" ][ "email" ].value;
-		var atpos = x.indexOf( "@" );
-		var dotpos = x.lastIndexOf( "." );
-		var pass = document.forms[ "register" ][ "pass" ].value;
-		if ( fname == null || fname == "" ) {
-			alert( "First Name must be filled out" );
+		var fname = document.forms["register"]["fname"].value;
+		var lname = document.forms["register"]["lname"].value;
+		var faname = document.forms["register"]["faname"].value;
+		var course = document.forms["register"]["course"].value;
+		var dob = document.forms["register"]["dob"].value;
+		var addrs = document.forms["register"]["addrs"].value;
+		var gender = document.forms["register"]["gender"].value;
+		var phno = document.forms["register"]["phno"].value;
+		var x = document.forms["register"]["email"].value;
+		var atpos = x.indexOf("@");
+		var dotpos = x.lastIndexOf(".");
+		var pass = document.forms["register"]["pass"].value;
+
+// Validate age (assuming the date of birth is in MM/DD/YYYY format)
+var dobValue = document.forms["register"]["dob"].value;
+    var dobDate = new Date(dobValue);
+    var currentDate = new Date();
+    var age = Math.floor((currentDate - dobDate) / (365.25 * 24 * 60 * 60 * 1000));
+
+    if (age < 16) {
+        alert("You must be at least 16 years old to register.");
+        return false;
+    }
+
+		if (fname == null || fname == "") {
+			alert("First Name must be filled out");
 			return false;
 		}
-		if ( lname == null || lname == "" ) {
-			alert( "Last Name must be filled out" );
+		if (lname == null || lname == "") {
+			alert("Last Name must be filled out");
 			return false;
 		}
-		if ( faname == null || faname == "" ) {
-			alert( "Father Name must be filled out" );
+		if (faname == null || faname == "") {
+			alert("Father Name must be filled out");
 			return false;
 		}
-		if ( course == null || course == "" ) {
-			alert( "Course must be filled out" );
+		if (course == null || course == "") {
+			alert("Course must be filled out");
 			return false;
 		}
-		if ( dob == null || dob == "" ) {
-			alert( "Date of birth must be filled out" );
+		if (dob == null || dob == "") {
+			alert("Date of birth must be filled out");
 			return false;
 		}
-		if ( addrs == null || addrs == "" ) {
-			alert( "Address must be filled out" );
+		if (addrs == null || addrs == "") {
+			alert("Address must be filled out");
 			return false;
 		}
-		if ( gender == null || gender == "" ) {
-			alert( "Gender must be filled out" );
+		if (gender == null || gender == "") {
+			alert("Gender must be filled out");
 			return false;
 		}
-		if ( phno == null || phno == "" ) {
-			alert( "Phone Number must be filled out" );
+		if (phno == null || phno == "") {
+			alert("Phone Number must be filled out");
 			return false;
 		}
-		if ( atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length ) {
-			alert( "Not a valid e-mail address" );
+		if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
+			alert("Not a valid e-mail address");
 			return false;
 		}
-		if ( pass == null || pass == "" ) {
-			alert( "Password must be filled out" );
+		if (pass == null || pass == "") {
+			alert("Password must be filled out");
 			return false;
 		}
+		return true; // If all validations pass
 	}
 </script>
 
 <div class="container" style="max-width: 1200px;">
 	<div class="row">
 		<?PHP
-		include( "database.php" );
-		if ( isset( $_POST[ 'submit' ] ) ) {
-			$fname = $_POST[ 'fname' ];
-			$lname = $_POST[ 'lname' ];
-			$faname = $_POST[ 'faname' ];
-			$course = $_POST[ 'course' ];
-			$dob = $_POST[ 'dob' ];
-			$addrs = $_POST[ 'addrs' ];
-			$gender = $_POST[ 'gender' ];
-			$phno = $_POST[ 'phno' ];
-			$email = $_POST[ 'email' ];
-			$pass = $_POST[ 'pass' ];
+		include("database.php");
+		if (isset($_POST['submit'])) {
+			$fname = $_POST['fname'];
+			$lname = $_POST['lname'];
+			$faname = $_POST['faname'];
+			$course = $_POST['course'];
+			$dob = $_POST['dob'];
+			$addrs = $_POST['addrs'];
+			$gender = $_POST['gender'];
+			$phno = $_POST['phno'];
+			$email = $_POST['email'];
+			$pass = $_POST['pass'];
 
-			$done = "<script>alert( 'Register Successfully Complete. Now You Can Login With Your Email & Password'); window.location = 'index.php';
-			</script>";
+  // Hash the password
+  $hashedPassword = password_hash($pass, PASSWORD_DEFAULT);
 
-			$sql = "INSERT INTO `studenttable` (`FName`, `LName`, `FaName`, `DOB`, `Addrs`, `Gender`, `PhNo`, `Eid`, `Pass`,`Course`) VALUES ('$fname','$lname','$faname','$dob','$addrs','$gender','$phno','$email','$pass','$course')";
-			//close the connection
-			mysqli_query( $connect, $sql );
+  // Use prepared statement to prevent SQL injection
+  $sql = "INSERT INTO `studenttable` (`FName`, `LName`, `FaName`, `DOB`, `Addrs`, `Gender`, `PhNo`, `Eid`, `Pass`,`Course`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+  
+  $stmt = mysqli_prepare($connect, $sql);
+  mysqli_stmt_bind_param($stmt, "ssssssssss", $fname, $lname, $faname, $dob, $addrs, $gender, $phno, $email, $hashedPassword, $course);
+  mysqli_stmt_execute($stmt);
 
-			echo $done;
-		}
-		?>
+  $done = "<script>alert('Register Successfully Complete. Now You Can Login With Your Email & Password'); window.location = 'studentlogin.php';</script>";
+
+
+  echo $done;
+}
+?>
 
 	</div>
 	<div class="row">
@@ -117,21 +136,21 @@
 					</div>
 
 					<div class="control-group form-group">
-    <div class="controls">
-        <label>Course: <span style="color: #ff0000;">*</span></label>
-        <select class="form-control" name="course" id="course">
-            <option value="" selected disabled>Select a course</option>
-            <option value="Course1">HTML</option>
-            <option value="Course2">PHP</option>
-            <option value="Course3">SQL</option>
-			<option value="Course4">JavaScript</option>
-			<option value="Course5">Bootstrap</option>
-			<option value="Course6">jQuery</option>
-            <!-- Add more options as needed -->
-        </select>
-        <p class="help-block"></p>
-    </div>
-</div>
+						<div class="controls">
+							<label>Course: <span style="color: #ff0000;">*</span></label>
+							<select class="form-control" name="course" id="course">
+								<option value="" selected disabled>Select a course</option>
+								<option value="Course1">HTML</option>
+								<option value="Course2">PHP</option>
+								<option value="Course3">SQL</option>
+								<option value="Course4">JavaScript</option>
+								<option value="Course5">Bootstrap</option>
+								<option value="Course6">jQuery</option>
+								<!-- Add more options as needed -->
+							</select>
+							<p class="help-block"></p>
+						</div>
+					</div>
 
 
 					<div class="control-group form-group">
@@ -155,14 +174,14 @@
 							<label>Gender: <span style="color: #ff0000;">*</span></label>
 							<p>
 								<label>
-<input type="radio" name="gender" value="Male" id="Gender_0" checked>
-Male</label>
-							
+									<input type="radio" name="gender" value="Male" id="Gender_0" checked>
+									Male</label>
+
 
 								<label>
-<input type="radio" name="gender" value="Female" id="Gender_1">
-Female</label>
-							
+									<input type="radio" name="gender" value="Female" id="Gender_1">
+									Female</label>
+
 								<br>
 							</p>
 							<p class="help-block"></p>
@@ -204,5 +223,3 @@ Female</label>
 	</div>
 </div>
 <?php include('footer.php'); ?>
-
-		

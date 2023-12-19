@@ -18,19 +18,21 @@ $userid = $_SESSION[ "umail" ];
 			<div class="col-md-2"></div>
 		<div class="col-md-8">
 
-		<h3 class="text-center" style="padding-bottom: 0px;"> Welcome</h3>
-
-				<h3 class="text-center" style="padding-bottom: 0px;"> <a href="welcomeadmin">Admin</a></h3>
-			
-				<h3 class="text-center" style="padding-bottom: 0px;">
-			<a href="studentdetails"><button  href="" type="submit" class="btn btn-primary">Student Details</button></a>
-
-			<a href="facultydetails"><button  href="" type="submit" class="btn btn-primary">Faculty Details</button></a>
-
-			<a href="guestdetails"><button  href="" type="submit" class="btn btn-primary">Guest Details</button></a>
-
-			<a href="logoutadmin"><button  href="" type="submit" class="btn btn-danger">Logout</button></a>
+		<h3 class="text-center" style="padding-bottom: 20px;">
+    <a href="welcomeadmin">Admin</a>
 </h3>
+<h3 class="text-center" style="padding-bottom: 20px;">
+    <a href="studentdetails"><button type="submit" class="btn btn-primary">Student Details</button></a>
+
+    <a href="facultydetails"><button type="submit" class="btn btn-primary">Faculty Details</button></a>
+
+    <a href="guestdetails"><button type="submit" class="btn btn-primary">Guest Details</button></a>
+
+    <a href="coursedetails"><button type="submit" class="btn btn-primary">Course Details</button></a>
+
+    <a href="logoutadmin"><button type="submit" class="btn btn-danger">Logout</button></a>
+</h3>
+<h3 class="text-center" style="padding-bottom: 80px;"></h3>
 		</div>
 		<div class="col-md-2"></div>
 	</div>

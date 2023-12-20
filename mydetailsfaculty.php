@@ -100,4 +100,5 @@ $fname = $_SESSION[ "fname" ];
 			?>
 		</div>
 	</div>
+	</div>
 	<?php include('footer.php'); ?>

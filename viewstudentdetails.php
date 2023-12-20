@@ -72,4 +72,5 @@ $fname = $_SESSION[ "fname" ];
 			</table>
 		</div>
 	</div>
+	</div>
 	<?php include('footer.php'); ?>

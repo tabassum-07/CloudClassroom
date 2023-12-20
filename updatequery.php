@@ -77,4 +77,5 @@ while($row=mysqli_fetch_array($result))
 			?>
 		</div>
 	</div>
-	<?php include('footer.php'); ?>
+	<?php include('footer.php'); ?> 
+	

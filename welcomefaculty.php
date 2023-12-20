@@ -19,7 +19,7 @@ $fname = $_SESSION["fname"];
 
 			<!--Welcome page for faculty-->
 
-			<div class="col-md-12 text-center" style= "padding-top: 50px; padding-bottom: 50px;">
+			<div class="col-md-12 text-center" style= "padding-top: 40px; padding-bottom: 50px;">
 
     <!-- ... (rest of your code) ... -->
 
@@ -44,6 +44,7 @@ $fname = $_SESSION["fname"];
 		</div>
 		<div class="col-md-2"></div>
 
+	</div>
 	</div>
 	</div>
 

@@ -61,11 +61,12 @@ $userid = $_SESSION["umail"];
 						 <td><?PHP echo $row['GuEid'];?></td>
 						 <td><?PHP echo $row['Gname'];?></td>
 						 <td><a href="updateguest.php?gid=<?php echo $row['GuEid']; ?>"><input type="button" Value="Edit" class="btn btn-info btn-sm"></a></td> 
-						 <td><a href="guestdetails.php?deleteid=<?php echo $row['GuEid']; ?>"><input type="button" Value="Delete" class="btn btn-info btn-sm"></a></td> 
+						 <td><a href="guestdetails.php?deleteid=<?php echo $row['GuEid']; ?>"><input type="button" Value="Delete" class="btn btn-danger btn-sm"></a></td> 
 					 </tr> 
 					
 				<?php } ?>
 				</table>     
             </div>
+	</div>
 	</div>
 <?php include('footer.php'); ?>

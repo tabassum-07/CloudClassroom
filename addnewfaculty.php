@@ -1,11 +1,11 @@
 <?php
 session_start();
 
-if ( $_SESSION[ "umail" ] == "" || $_SESSION[ "umail" ] == NULL ) {
-	header( 'Location:AdminLogin.php' );
+if ($_SESSION["umail"] == "" || $_SESSION["umail"] == NULL) {
+	header('Location:AdminLogin.php');
 }
 
-$userid = $_SESSION[ "umail" ];
+$userid = $_SESSION["umail"];
 ?>
 <?php include('adminhead.php'); ?>
 
@@ -13,10 +13,45 @@ $userid = $_SESSION[ "umail" ];
 	<div class="row">
 		<div class="col-md-4">
 			<h3 class="page-header">Welcome <a href="welcomeadmin">Admin</a> </h3>
-			<h4 class="page-header">Add New Faculty </h4>
+
 			<?php
-			include( "database.php" );
+			include("database.php");
 			?>
+
+			<?php
+			if (isset($_POST['addnewfaculty'])) {
+				$tempfname = $_POST['fname'];
+				$tempemail = $_POST['email'];
+				$tempaddrs = $_POST['addrs'];
+				$tempgender = $_POST['gender'];
+				$tempphno = $_POST['phno'];
+				$tempjdate = $_POST['jdate'];
+				$tempcity = $_POST['city'];
+				$temppass = $_POST['pass'];
+
+				// adding new faculty
+				$sql = "INSERT INTO facutlytable (FName, Email, Addrs, Gender, JDate, City, Pass, PhNo) VALUES ('$tempfname', '$tempemail', '$tempaddrs', '$tempgender', '$tempjdate', '$tempcity', '$temppass', '$tempphno')";
+
+				if (mysqli_query($connect, $sql)) {
+
+					echo "<br>
+					<br><br>
+					<div class='alert alert-success fade in'>
+					<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+					<strong>Success!</strong> New Faculty Addded Faculty ID is : <strong>" . mysqli_insert_id($connect) . "</strong></div>";
+				} else {
+					//error message if SQL query Fails
+					echo "<br><Strong>New Faculty Adding Faliure. Try Again</strong><br> Error Details: " . $sql . "<br>" . mysqli_error($connect);
+				}
+				//close the connection
+				mysqli_close($connect);
+			}
+
+
+			?>
+
+
+			<h4 class="page-header">Add New Faculty </h4>
 			<form action="" method="POST" name="update">
 
 
@@ -26,9 +61,9 @@ $userid = $_SESSION[ "umail" ];
 				</div>
 
 				<div class="form-group">
-    <label for="Email">Email :<span style="color: #ff0000;">*</span></label>
-    <input type="email" class="form-control" id="email" name="email" required>
-</div>
+					<label for="Email">Email :<span style="color: #ff0000;">*</span></label>
+					<input type="email" class="form-control" id="email" name="email" required>
+				</div>
 
 				<div class="form-group">
 					<label for="Address">Address : <span style="color: #ff0000;">*</span></label>
@@ -43,7 +78,7 @@ $userid = $_SESSION[ "umail" ];
 
 				<div class="form-group">
 					<label for="PhoneNumber">Phone Number : <span style="color: #ff0000;">*</span></label>
-					<input type="text" class="form-control" id="phno" name="phno" maxlength="10" required>
+					<input type="text" class="form-control" id="phno" name="phno" maxlength="11" required>
 				</div>
 
 				<div class="form-group">
@@ -70,39 +105,7 @@ $userid = $_SESSION[ "umail" ];
 			//}
 			?>
 
-			<?php
-			if ( isset( $_POST[ 'addnewfaculty' ] ) ) {
-				$tempfname = $_POST[ 'fname' ];
-				$tempemail = $_POST['email'];
-				$tempaddrs = $_POST[ 'addrs' ];
-				$tempgender = $_POST[ 'gender' ];
-				$tempphno = $_POST[ 'phno' ];
-				$tempjdate = $_POST[ 'jdate' ];
-				$tempcity = $_POST[ 'city' ];
-				$temppass = $_POST[ 'pass' ];
-				
-				// adding new faculty
-				$sql = "INSERT INTO facutlytable (FName, Email, Addrs, Gender, JDate, City, Pass, PhNo) VALUES ('$tempfname', '$tempemail', '$tempaddrs', '$tempgender', '$tempjdate', '$tempcity', '$temppass', '$tempphno')";
 
-				if ( mysqli_query( $connect, $sql ) ) {
-
-					echo "<br>
-					<br><br>
-					<div class='alert alert-success fade in'>
-					<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-					<strong>Success!</strong> New Faculty Addded Faculty ID is : <strong>" . mysqli_insert_id( $connect ) . "</strong></div>";
-
-				} else {
-					//error message if SQL query Fails
-					echo "<br><Strong>New Faculty Adding Faliure. Try Again</strong><br> Error Details: " . $sql . "<br>" . mysqli_error( $connect );
-				}
-				//close the connection
-				mysqli_close( $connect );
-
-			}
-
-
-			?>
 		</div>
 	</div>
 

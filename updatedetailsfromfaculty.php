@@ -13,7 +13,7 @@ $fname = $_SESSION["fname"];
 	.show-password-icon {
 		cursor: pointer;
 		position: absolute;
-		right: 40%;
+		right: 200px;
 		top: 390px;
 		transform: translateY(-50%);
 	}
@@ -41,7 +41,7 @@ $fname = $_SESSION["fname"];
 					<div class="form-group">
 						Faculty Name : <input type="text" name="fname" value="<?php echo $row['FName']; ?>"></div>
 					<div class="form-group">
-						Father Name : <input type="text" name="email" value="<?PHP echo $row['Email']; ?>"><br></div>
+						Email : <input type="text" name="email" value="<?PHP echo $row['Email']; ?>"><br></div>
 					<div class="form-group">
 						Address : <input type="text" name="addrs" rows="5" cols="40" value="<?PHP echo $row['Addrs']; ?>"><br></div>
 					<div class="form-group">
@@ -53,21 +53,21 @@ $fname = $_SESSION["fname"];
 					<div class="form-group">
 						City : <input type="text" name="city" value="<?PHP echo $row['City']; ?>"><br></div>
 
-<!-- Add this script for password toggle -->
-<script>
-    function togglePasswordVisibility() {
-        var passwordInput = document.getElementById('passwordInput');
-        var icon = document.querySelector('.show-password-icon');
+					<!-- Add this script for password toggle -->
+					<script>
+						function togglePasswordVisibility() {
+							var passwordInput = document.getElementById('passwordInput');
+							var icon = document.querySelector('.show-password-icon');
 
-        if (passwordInput.type === 'password') {
-            passwordInput.type = 'text';
-            icon.textContent = '👁️';
-        } else {
-            passwordInput.type = 'password';
-            icon.textContent = '👁️';
-        }
-    }
-</script>
+							if (passwordInput.type === 'password') {
+								passwordInput.type = 'text';
+								icon.textContent = '👁️';
+							} else {
+								passwordInput.type = 'password';
+								icon.textContent = '👁️';
+							}
+						}
+					</script>
 
 					<div class="form-group">
 						Password:
@@ -97,7 +97,7 @@ $fname = $_SESSION["fname"];
 				</script>";
 
 				//below SQL query will update the existing faculty 
-				$sql = "UPDATE `facutlytable` SET FName='$tempfname', Email='$tempemail', Addrs='$tempaddrs', Gender='$tempgender', City='$tempcity', Pass='$temppass', PhNo='$tempphno' WHERE FID=$new2";
+				$sql = "UPDATE `facutlytable` SET FName='$tempfname', Email='$tempemail', Addrs='$tempaddrs', Gender='$tempgender', City='$tempcity', Pass='$temppass', `PhNo`='$tempphno' WHERE FID='$new2' ";
 
 
 				if (mysqli_query($connect, $sql)) {
@@ -112,5 +112,5 @@ $fname = $_SESSION["fname"];
 			?>
 		</div>
 	</div>
-	</div>
-	<?php include('footer.php'); ?>
+</div>
+<?php include('footer.php'); ?>

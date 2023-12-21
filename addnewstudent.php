@@ -1,11 +1,11 @@
 <?php
 session_start();
 
-if ( $_SESSION[ "umail" ] == "" || $_SESSION[ "umail" ] == NULL ) {
-	header( 'Location:AdminLogin.php' );
+if ($_SESSION["umail"] == "" || $_SESSION["umail"] == NULL) {
+	header('Location:AdminLogin.php');
 }
 
-$userid = $_SESSION[ "umail" ];
+$userid = $_SESSION["umail"];
 ?>
 <?php include('adminhead.php'); ?>
 
@@ -13,30 +13,30 @@ $userid = $_SESSION[ "umail" ];
 
 	<div class="row">
 		<?php
-		include( "database.php" );
-		if ( isset( $_POST[ 'addnews' ] ) ) {
-			$tempfname = $_POST[ 'fname' ];
-			$templname = $_POST[ 'lname' ];
-			$tempfaname = $_POST[ 'faname' ];
-			$tempdob = $_POST[ 'DOB' ];
-			$tempaddrs = $_POST[ 'addrs' ];
-			$tempgender = $_POST[ 'gender' ];
-			$tempcourse = $_POST[ 'course' ];
-			$tempphno = $_POST[ 'phno' ];
-			$tempeid = $_POST[ 'email' ];
-			$temppass = $_POST[ 'pass' ];
+		include("database.php");
+		if (isset($_POST['addnews'])) {
+			$tempfname = $_POST['fname'];
+			$templname = $_POST['lname'];
+			$tempfaname = $_POST['faname'];
+			$tempdob = $_POST['DOB'];
+			$tempaddrs = $_POST['addrs'];
+			$tempgender = $_POST['gender'];
+			$tempcourse = $_POST['course'];
+			$tempphno = $_POST['phno'];
+			$tempeid = $_POST['email'];
+			$temppass = $_POST['pass'];
 			//adding new student into database SQL Query
-			$sql = "Insert into studenttable (FName, LName, FaName, DOB, Addrs, Gender, Course, PhNo , Eid, Pass) values ('$tempfname', '$templname', '$tempfaname', '$tempdob', '$tempaddrs' , '$tempgender', '$tempcourse' , $tempphno, '$tempeid' , '$temppass')";
-			if ( mysqli_query( $connect, $sql ) ) {
+			$sql = "Insert into studenttable (FName, LName, FaName, DOB, Addrs, Gender, Course, PhNo , Eid, Pass) values ('$tempfname', '$templname', '$tempfaname', '$tempdob', '$tempaddrs' , '$tempgender', '$tempcourse' , '$tempphno', '$tempeid' , '$temppass')";
+			if (mysqli_query($connect, $sql)) {
 				echo "<center><div class='alert alert-success fade in __web-inspector-hide-shortcut__'' style='margin-top:10px;'><a href='#' class='close' data-dismiss='alert' aria-label='close' title='close'>&times;</a>
-				<h3 style='margin-top: 10px; margin-bottom: 10px;'>Admission Confirm.! Enrolment Number is : <span style='color:black'><strong>" . mysqli_insert_id( $connect ) . "</strong></span></h4></div></center>
+				<h3 style='margin-top: 10px; margin-bottom: 10px;'>Admission Confirm.! Enrolment Number is : <span style='color:black'><strong>" . mysqli_insert_id($connect) . "</strong></span></h4></div></center>
 				";
 			} else {
 				//error message if SQL query fails
-				echo "<br><Strong>Admission Faliure. Try Again</strong><br> Error Details: " . $sql . "<br>" . mysqli_error( $connect );
+				echo "<br><Strong>Admission Faliure. Try Again</strong><br> Error Details: " . $sql . "<br>" . mysqli_error($connect);
 			}
 			//close the connection
-			mysqli_close( $connect );
+			mysqli_close($connect);
 		}
 		?>
 	</div>
@@ -83,7 +83,7 @@ $userid = $_SESSION[ "umail" ];
 
 				<div class="form-group">
 					<label for="Phone Number">Phone Number : </label>
-					<input type="tel" class="form-control" id="phno" name="phno" maxlength="10" required>
+					<input type="tel" class="form-control" id="phno" name="phno" maxlength="11" required>
 				</div>
 
 				<div class="form-group">

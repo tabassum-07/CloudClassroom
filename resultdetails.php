@@ -67,7 +67,7 @@
 		</td>
 		<td><a href="updateresultdetails.php?editid=<?php echo $row['RsID']; ?>"><input type="button" Value="Edit" class="btn btn-info btn-sm"></a>
 		</td>
-		<td><a href="resultdetails.php?deleteid=<?php echo $row['RsID']; ?>"><input type="button" Value="Delete" class="btn btn-info btn-sm"></a>
+		<td><a href="resultdetails.php?deleteid=<?php echo $row['RsID']; ?>"><input type="button" Value="Delete" class="btn btn-danger btn-sm"></a>
 		</td>
 				</tr>
 
@@ -81,5 +81,5 @@
 			</div>
 
 		</div>
-
+		</div>
 		<?php include('footer.php'); ?>

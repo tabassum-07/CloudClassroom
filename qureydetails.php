@@ -65,11 +65,12 @@ $fname = $_SESSION["fname"];
 				</td>
 				<td><a href="updatequery.php?gid=<?php echo $row['Qid']; ?>"><input type="button" Value="Edit" class="btn btn-info btn-sm"></a>
 				</td>
-				<td><a href="qureydetails.php?deleteid=<?php echo $row['Qid']; ?>"><input type="button" Value="Delete" name="" class="btn btn-info btn-sm"></a>
+				<td><a href="qureydetails.php?deleteid=<?php echo $row['Qid']; ?>"><input type="button" Value="Delete" name="" class="btn btn-danger btn-sm"></a>
 				</td>
 			</tr>
 			<?php } ?>
 			</table>
 		</div>
+	</div>
 	</div>
 	<?php include('footer.php'); ?>

@@ -1,3 +1,13 @@
+<style>
+	.show-password-icon {
+		cursor: pointer;
+		position: absolute;
+		right: 885px;
+		top: 430px;
+		transform: translateY(-50%);
+	}
+</style>
+
 <?php
 session_start();
 
@@ -41,7 +51,27 @@ $userid = $_SESSION["umail"];
 
 					<div class="form-group">City : <input type="text" name="city" value="<?PHP echo $row['City']; ?>"><br></div>
 
-					<div class="form-group">Password : <input type="password" name="pass" value="<?PHP echo $row['Pass']; ?>" maxlength="10"><br></div>
+					<!-- Add this script for password toggle -->
+					<script>
+						function togglePasswordVisibility() {
+							var passwordInput = document.getElementById('passwordInput');
+							var icon = document.querySelector('.show-password-icon');
+
+							if (passwordInput.type === 'password') {
+								passwordInput.type = 'text';
+								icon.textContent = '👁️';
+							} else {
+								passwordInput.type = 'password';
+								icon.textContent = '👁️';
+							}
+						}
+					</script>
+
+					<div class="form-group">
+						Password:
+						<input type="password" name="pass" id="passwordInput" value="<?PHP echo $row['Pass']; ?>" maxlength="10">
+						<i class="show-password-icon" onclick="togglePasswordVisibility()">👁️</i>
+					</div>
 
 					<div class="form-group">
 						<input type="submit" value="Update!" name="update" class="btn btn-primary">
@@ -78,4 +108,5 @@ $userid = $_SESSION["umail"];
             ?>
         </div>
     </div>
+	</div>
     <?php include('footer.php'); ?>

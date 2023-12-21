@@ -89,4 +89,5 @@ mysqli_close($connect);
 			</fieldset>
 		</div>
 	</div>
+	</div>
 	<?php include('footer.php'); ?>

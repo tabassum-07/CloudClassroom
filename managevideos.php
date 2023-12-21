@@ -70,7 +70,7 @@ $fname = $_SESSION[ "fname" ];
 					<?PHP echo $row['V_Remarks'];?>
 				</td>
 								
-				<td><a href="managevideos.php?deleteid=<?php echo $row['V_id']; ?>"> <input type="button" Value="Delete"  class="btn btn-info btn-sm"  data-toggle="modal" data-target="#myModal"></a>
+				<td><a href="managevideos.php?deleteid=<?php echo $row['V_id']; ?>"> <input type="button" Value="Delete"  class="btn btn-danger btn-sm"  data-toggle="modal" data-target="#myModal"></a>
 				<td><a href="managevideos2.php?editassid=<?php echo $row['V_id']; ?>"> <input type="button" Value="Edit"  class="btn btn-info btn-sm"  data-toggle="modal" data-target="#myModal"></a>
 				</td>
 				</td>
@@ -79,7 +79,7 @@ $fname = $_SESSION[ "fname" ];
 			}
 			?>	
 			</table>
-			
+			</div>
 		</div>
 	</div>
 	<?php include('footer.php'); ?>

@@ -2,7 +2,7 @@
 	.show-password-icon {
 		cursor: pointer;
 		position: absolute;
-		right: 75%;
+		right: 885px;
 		top: 473px;
 		transform: translateY(-50%);
 	}

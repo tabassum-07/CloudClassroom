@@ -99,14 +99,14 @@ $userid = $_SESSION[ "umail" ];
 				
 				<td><a href="updatefaculty.php?fid=<?php echo $row['FID']; ?>"><input type="button" Value="Edit" class="btn btn-info btn-sm"></a>
 				</td>
-				<td><a href="facultydetails.php?deleteid=<?php echo $row['FID']; ?>"><input type="button" Value="Delete" class="btn btn-info btn-sm"></a>
+				<td><a href="facultydetails.php?deleteid=<?php echo $row['FID']; ?>"><input type="button" Value="Delete" class="btn btn-danger btn-sm"></a>
 				</td>
 			</tr>
 			<?php } ?>
 			</table>
-			<a href="addnewfaculty"><button type="button" value="Add New Faculty" class="btn btn-info btn-sm">Add New Faculty</button></a>
+			<a href="addnewfaculty"><button type="button" value="Add New Faculty" class="btn btn-success btn-sm">Add New Faculty</button></a>
 
 		</div>
 	</div>
-
+	</div>
 	<?php include('footer.php'); ?>

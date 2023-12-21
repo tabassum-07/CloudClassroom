@@ -85,7 +85,7 @@ $fname = $_SESSION[ "fname" ];
 				<td>
 					<?PHP echo $row['Ans5'];?>
 				</td>
-				<td><a href="examDetails.php?deleteid=<?php echo $row['ExamID']; ?>"> <input type="button" Value="Delete"  class="btn btn-info btn-sm"  data-toggle="modal" data-target="#myModal"></a>
+				<td><a href="examDetails.php?deleteid=<?php echo $row['ExamID']; ?>"> <input type="button" Value="Delete"  class="btn btn-danger btn-sm"  data-toggle="modal" data-target="#myModal"></a>
 				</td>
 				<td><a href="makeresult.php?makeid=<?php echo $row['ExamID']; ?>"> <input type="button" Value="Make"  class="btn btn-info btn-sm"  data-toggle="modal" data-target="#myModal"></a>
 				</td>
@@ -94,7 +94,7 @@ $fname = $_SESSION[ "fname" ];
 			}
 			?>	
 			</table>
-			
+			</div>	
 		</div>
 	</div>
 	<?php include('footer.php'); ?>

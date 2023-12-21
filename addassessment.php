@@ -53,38 +53,38 @@ $fname = $_SESSION[ "fname" ];
 							<td><strong>Assessment Name  </strong>
 							</td>
 							<td>
-								<input type="text" name="AssessmentName">
+								<input type="text" name="AssessmentName" required>
 							</td>
 
 						</tr>
 						<tr>
 							<td><strong>Question 1</strong> </td>
 							<td>
-								<textarea name="Q1" rows="5" cols="150"></textarea>
+								<textarea name="Q1" rows="5" cols="150" required></textarea>
 							</td>
 						</tr>
 						<tr>
 							<td><strong>Question 2</strong> </td>
 							<td>
-								<textarea name="Q2" rows="5" cols="150"></textarea>
+								<textarea name="Q2" rows="5" cols="150" required></textarea>
 							</td>
 						</tr>
 						<tr>
 							<td><strong>Question 3</strong> </td>
 							<td>
-								<textarea name="Q3" rows="5" cols="150"></textarea>
+								<textarea name="Q3" rows="5" cols="150" required></textarea>
 							</td>
 						</tr>
 						<tr>
 							<td><strong>Question 4</strong> </td>
 							<td>
-								<textarea name="Q4" rows="5" cols="150"></textarea>
+								<textarea name="Q4" rows="5" cols="150" required></textarea>
 							</td>
 						</tr>
 						<tr>
 							<td><strong>Question 5</strong> </td>
 							<td>
-								<textarea name="Q5" rows="5" cols="150"></textarea>
+								<textarea name="Q5" rows="5" cols="150" required></textarea>
 							</td>
 						</tr>
 						
@@ -95,5 +95,6 @@ $fname = $_SESSION[ "fname" ];
 				</form>
 			</fieldset>
 		</div>
+	</div>
 	</div>
 	<?php include('footer.php'); ?>

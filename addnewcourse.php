@@ -15,7 +15,7 @@
                 <h3 class="page-header">Add New Course</h3>
 
                 <!-- Add New Course Form -->
-                <form action="process_add_course.php" method="post">
+                <form action="coursedetails.php" method="post">
                     <div class="form-group">
                         <label for="courseTitle">Course Title:</label>
                         <input type="text" class="form-control" id="courseTitle" name="courseTitle" required>

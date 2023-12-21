@@ -51,20 +51,20 @@ $fname = $_SESSION[ "fname" ];
 							<td><strong>Video Title  </strong>
 							</td>
 							<td>
-								<input type="text" name="videotitle">
+								<input type="text" name="videotitle" required>
 							</td>
 
 						</tr>
 						<tr>
 							<td><strong>Video URL</strong> </td>
 							<td>
-								<textarea name="VideoURL" rows="1" cols="150"></textarea>
+								<textarea name="VideoURL" rows="1" cols="150" required></textarea>
 							</td>
 						</tr>
 						<tr>
 							<td><strong>Video Description</strong> </td>
 							<td>
-								<textarea name="Videoinfo" rows="5" cols="150"></textarea>
+								<textarea name="Videoinfo" rows="5" cols="150" required></textarea>
 							</td>
 						</tr>
 						
@@ -74,6 +74,7 @@ $fname = $_SESSION[ "fname" ];
 					</table>
 				</form>
 			</fieldset>
+		</div>
 		</div>
 	</div>
 	<?php include('footer.php'); ?>

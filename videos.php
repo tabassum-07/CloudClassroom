@@ -20,4 +20,5 @@ $fname = $_SESSION[ "fname" ];
 			</div>
 			<div class="col-md-2"></div>
 	</div>
+	</div>
 	<?php include('footer.php'); ?>

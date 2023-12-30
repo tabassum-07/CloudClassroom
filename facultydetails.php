@@ -39,7 +39,7 @@ $userid = $_SESSION[ "umail" ];
 
 
 	<div class="row">
-		<div class="col-md-8">
+		<div class="col-md-10 col-md-offset-1">
 			<h3 class="page-header">Welcome <a href="welcomeadmin">Admin</a> </h3>
 			<?php
 			include( "database.php" );

@@ -78,36 +78,15 @@
                         // session_start();
                         if (!isset($_SESSION['umail']) && !isset($_SESSION['fidx']) && !isset($_SESSION['sidx'])) {
                         ?>
-                        <li>
-                            <a href="postquerypublic">Post Qurey</a>
-                        </li>
-                        <?php
-                        }
-                        ?>
-
-                        <?php
-                        // session_start();
-                        if (!isset($_SESSION['umail']) && !isset($_SESSION['fidx']) && !isset($_SESSION['sidx'])) {
-                        ?>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="studentlogin">Student Login</a>
-                                    </li>
-                                    <li>
-                                        <a href="facultylogin">Faculty Login</a>
-                                    </li>
-                                    <li>
-                                        <a href="adminlogin">Admin Login</a>
-                                    </li>
-                                </ul>
+                            <li>
+                                <a href="postquerypublic">Post Query</a>
                             </li>
+                            
                         <?php
                         }
                         ?>
 
-                        <?php
+<?php
                         if (isset($_SESSION['umail'])) {
                             echo '<li><a href="welcomeadmin">Admin Dashboard</a></li>';
                         }
@@ -118,6 +97,47 @@
                             echo '<li><a href="welcomestudent">Student Dashboard</a></li>';
                         }
                         ?>
+
+<?php
+$current_page = basename($_SERVER['PHP_SELF']);
+if ($current_page == 'postquerypublic.php' || $current_page == 'registrationform.php' || $current_page == 'studentlogin.php' || $current_page == 'facultylogin.php' || $current_page == 'adminlogin.php') {
+    // Do not include the login dropdown on specified pages
+} elseif (!isset($_SESSION['fidx']) && !isset($_SESSION['sidx']) && !isset($_SESSION['umail'])) { // Exclude login dropdown if faculty is logged in
+?>
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li>
+                <a href="studentlogin">Student Login</a>
+            </li>
+            <li>
+                <a href="facultylogin">Faculty Login</a>
+            </li>
+            <li>
+                <a href="adminlogin">Admin Login</a>
+            </li>
+        </ul>
+    </li>
+<?php
+}
+?>
+
+<?php
+if (isset($_SESSION['sidx'])){
+    echo '<li><a href="logoutstudent" style="font-size: x-large;"><span class="glyphicon glyphicon-off title="title="logout"></span> </a></li>';
+}
+?>
+<?php
+if (isset($_SESSION['fidx'])) {
+    echo '<li><a href="logoutfaculty" style="font-size: x-large;"><span class="glyphicon glyphicon-off title="title="logout"></span> </a></li>';
+}
+?>
+<?php
+if (isset($_SESSION['umail'])) {
+    echo '<li><a href="logoutadmin" style="font-size: x-large;"><span class="glyphicon glyphicon-off title="title="logout"></span> </a></li>';
+}
+?>
+
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->

@@ -25,28 +25,21 @@ $rs=mysqli_query($connect,$sql);
 echo "<h2 class='page-header'>Result View</h2>";
 echo "<table class='table table-striped' style='width:100%'>
 <tr>
-<th>Result ID</th>
+<th>Exam ID</th>
 <th>Enrolment Number</th>
 <th>Marks</th>
 
 </tr>";
-while($row=mysqli_fetch_array($rs))
-{
-?>
-			<tr>
-				<td>
-					<?PHP echo $row['RsID'];?>
-				</td>
-				<td>
-					<?PHP echo $row['Eno'];?>
-				</td>
-				
-				<td>
-					<?PHP echo $row['Marks'];?>
-				</td>
-			</tr>
-			<?php
-			}
+
+while ($row = mysqli_fetch_array($rs)) {
+    ?>
+    <tr>
+        <td><?php echo $row['Eno']; ?></td>
+        <td><?php echo $row['Ex_ID']; ?></td>
+        <td><?php echo $row['Marks']; ?></td>
+    </tr>
+    <?php
+}
 			?>
 			</table>
 		</div>

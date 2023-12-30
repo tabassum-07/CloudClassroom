@@ -11,7 +11,7 @@ $fname = $_SESSION[ "fname" ];
 <?php include('fhead.php');  ?>
 <div class="container">
 	<div class="row">
-		<div class="col-md-8">
+		<div class="col-md-10 col-md-offset-1">
 			<h3>  <a href="welcomefaculty.php" ><span style="color:#FF0004"> <?php echo $fname; ?></span></a> </h3>
 			
 			<?php
@@ -46,7 +46,6 @@ $fname = $_SESSION[ "fname" ];
 				echo "<h2 class='page-header'>Videos Details</h2>";
 				echo "<table class='table table-striped' style='width:100%'>
 				<tr>
-					<th>ID</th>
 					<th>Video Title</th>
 					<th>Video URL</th>
 					<th>Description</th>
@@ -57,9 +56,6 @@ $fname = $_SESSION[ "fname" ];
 				{
 				?>
 			<tr>
-				<td>
-					<?PHP echo $row['V_id'];?>
-				</td>
 				<td>
 					<?PHP echo $row['V_Title'];?>
 				</td>

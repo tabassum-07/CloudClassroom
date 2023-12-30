@@ -78,7 +78,6 @@ var dobValue = document.forms["register"]["dob"].value;
 			$fname = $_POST['fname'];
 			$lname = $_POST['lname'];
 			$faname = $_POST['faname'];
-			$course = $_POST['course'];
 			$dob = $_POST['dob'];
 			$addrs = $_POST['addrs'];
 			$gender = $_POST['gender'];
@@ -131,23 +130,6 @@ var dobValue = document.forms["register"]["dob"].value;
 						<div class="controls">
 							<label>Father Name: <span style="color: #ff0000;">*</span></label>
 							<input type="text" class="form-control" name="faname" id="faname" maxlength="30">
-							<p class="help-block"></p>
-						</div>
-					</div>
-
-					<div class="control-group form-group">
-						<div class="controls">
-							<label>Course: <span style="color: #ff0000;">*</span></label>
-							<select class="form-control" name="course" id="course">
-								<option value="" selected disabled>Select a course</option>
-								<option value="Course1">HTML</option>
-								<option value="Course2">PHP</option>
-								<option value="Course3">SQL</option>
-								<option value="Course4">JavaScript</option>
-								<option value="Course5">Bootstrap</option>
-								<option value="Course6">jQuery</option>
-								<!-- Add more options as needed -->
-							</select>
 							<p class="help-block"></p>
 						</div>
 					</div>

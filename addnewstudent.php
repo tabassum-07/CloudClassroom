@@ -21,12 +21,11 @@ $userid = $_SESSION["umail"];
 			$tempdob = $_POST['DOB'];
 			$tempaddrs = $_POST['addrs'];
 			$tempgender = $_POST['gender'];
-			$tempcourse = $_POST['course'];
 			$tempphno = $_POST['phno'];
 			$tempeid = $_POST['email'];
 			$temppass = $_POST['pass'];
 			//adding new student into database SQL Query
-			$sql = "Insert into studenttable (FName, LName, FaName, DOB, Addrs, Gender, Course, PhNo , Eid, Pass) values ('$tempfname', '$templname', '$tempfaname', '$tempdob', '$tempaddrs' , '$tempgender', '$tempcourse' , '$tempphno', '$tempeid' , '$temppass')";
+			$sql = "Insert into studenttable (FName, LName, FaName, DOB, Addrs, Gender, Course, PhNo , Eid, Pass) values ('$tempfname', '$templname', '$tempfaname', '$tempdob', '$tempaddrs' , '$tempgender', '$tempphno', '$tempeid' , '$temppass')";
 			if (mysqli_query($connect, $sql)) {
 				echo "<center><div class='alert alert-success fade in __web-inspector-hide-shortcut__'' style='margin-top:10px;'><a href='#' class='close' data-dismiss='alert' aria-label='close' title='close'>&times;</a>
 				<h3 style='margin-top: 10px; margin-bottom: 10px;'>Admission Confirm.! Enrolment Number is : <span style='color:black'><strong>" . mysqli_insert_id($connect) . "</strong></span></h4></div></center>
@@ -74,11 +73,6 @@ $userid = $_SESSION["umail"];
 					<label for="Gender">Gender : &nbsp;</label>
 					<input type="radio" name="gender" value="Male" id="Gender_0" checked> Male
 					<input type="radio" name="gender" value="Female" id="Gender_1"> Female
-				</div>
-
-				<div class="form-group">
-					<label for="Course">Course : </label>
-					<input type="text" class="form-control" id="course" name="course" placeholder="Assign Course" required>
 				</div>
 
 				<div class="form-group">

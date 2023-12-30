@@ -40,27 +40,27 @@ include("adminhead.php");
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h3 class="page-header">Edit Course</h3>
+            <h3 class="page-header">Edit Module</h3>
 
             <form action="" method="post">
                 <div class="form-group">
-                    <label for="courseTitle">Course Title:</label>
+                    <label for="courseTitle">Title:</label>
                     <input type="text" class="form-control" id="courseTitle" name="courseTitle" value="<?php echo $course['title']; ?>" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="courseCategory">Course Category:</label>
+                    <label for="courseCategory">Category:</label>
                     <input type="text" class="form-control" id="courseCategory" name="courseCategory" value="<?php echo $course['category']; ?>" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="courseDescription">Course Description:</label>
+                    <label for="courseDescription">Description:</label>
                     <textarea class="form-control" id="courseDescription" name="courseDescription" rows="4" required><?php echo $course['description']; ?></textarea>
                 </div>
 
                 <!-- Add more fields based on your course details -->
 
-                <button type="submit" class="btn btn-primary">Update Course</button>
+                <button type="submit" class="btn btn-primary">Update</button>
             </form>
         </div>
     </div>

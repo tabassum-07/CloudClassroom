@@ -52,7 +52,7 @@
 					</div>
 					<div class="form-group">
 						<input type="submit" value="Post Query!" name="update" class="btn btn-primary">
-						<button type="reset" name="reset" class="btn btn-primary">Clear</button>
+						<button type="reset" name="reset" class="btn btn-danger">Clear</button>
 				</fieldset>
 			</form>
 			<?php

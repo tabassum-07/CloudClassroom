@@ -3,7 +3,7 @@
 		cursor: pointer;
 		position: absolute;
 		right: 880px;
-		top: 511px;
+		top: 473px;
 		transform: translateY(-50%);
 	}
 </style>
@@ -49,9 +49,6 @@ $userid = $_SESSION["umail"];
 					</div>
 					<div class="form-group">
 						Gender : <input type="text" name="gender" value="<?PHP echo $row['Gender']; ?>"><br>
-					</div>
-					<div class="form-group">
-						Course : <input type="text" name="course" value="<?PHP echo $row['Course']; ?>"><br>
 					</div>
 					<div class="form-group">
 						D.O.B. : <input type="text" name="DOB" value="<?PHP echo $row['DOB']; ?>" readonly><br>
@@ -102,7 +99,6 @@ $userid = $_SESSION["umail"];
 				$tempfaname = $_POST['faname'];
 				$tempaddrs = $_POST['addrs'];
 				$tempgender = $_POST['gender'];
-				$tempcourse = $_POST['course'];
 				$tempphno = $_POST['phno'];
 				$tempeid = $_POST['email'];
 				$temppass = $_POST['pass'];
@@ -111,7 +107,7 @@ $userid = $_SESSION["umail"];
 				</script>";
 
 				//below query will update the existing record of student
-				$sql = "UPDATE `studenttable` SET FName='$tempfname', LName='$templname', FaName='$tempfaname', Gender='$tempgender', Course='$tempcourse', Addrs='$tempaddrs', PhNo='$tempphno', Eid='$tempeid', Pass='$temppass'  WHERE Eno='$new3' ";
+				$sql = "UPDATE `studenttable` SET FName='$tempfname', LName='$templname', FaName='$tempfaname', Gender='$tempgender', Addrs='$tempaddrs', PhNo='$tempphno', Eid='$tempeid', Pass='$temppass'  WHERE Eno='$new3' ";
 
 
 				if (mysqli_query($connect, $sql)) {

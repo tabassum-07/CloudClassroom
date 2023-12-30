@@ -15,7 +15,7 @@ $userlname = $_SESSION[ "lname" ];
 <div class="container">
 	<div class="row">
 		<div class="col-md-8">
-				<h3> <a href="welcomestudent.php" <?php echo "<span style='color:red'>".				$userfname." ".$userlname."</span>";?> </a></h3>
+		<h3> <a href="welcomestudent.php" ><?php echo "<span style='color:red'>". $userfname." ".$userlname."</span>";?> </a></h3>
 				
 			<?php 
 				

@@ -46,33 +46,37 @@
             </style>
 
             <!-- Our Courses -->
-<div class="row">
-    <div class="col-lg-12">
-        <h2 class="page-header">Our Courses</h2>
-    </div>
-
-    <?php
-    include("database.php"); // Ensure that this file has the database connection code
-
-    $sql = "SELECT * FROM courses";
-    $result = mysqli_query($connect, $sql);
-
-    while ($row = mysqli_fetch_assoc($result)) {
-    ?>
-        <div class="col-md-4">
-            <div class="thumbnail grey-bg">
-                <div class="caption">
-                    <h3><?php echo $row['title']; ?><br>
-                        <small><?php echo $row['category']; ?></small>
-                    </h3>
-                    <p><?php echo $row['description']; ?></p>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="page-header">Modules</h2>
                 </div>
+
+                <?php
+                include("database.php"); // Ensure that this file has the database connection code
+
+                $sql = "SELECT * FROM courses";
+                $result = mysqli_query($connect, $sql);
+
+                while ($row = mysqli_fetch_assoc($result)) {
+                ?>
+                    <div class="col-md-4">
+                        <div class="thumbnail grey-bg">
+                            <div class="caption">
+                                <h3><?php echo $row['title']; ?><br>
+                                    <small><?php echo $row['category']; ?></small>
+                                </h3>
+                                <p><?php echo $row['description']; ?></p>
+
+                            <!-- Add Learn More Button without a specific course ID -->
+                    <a href="registrationform.php" class="btn btn-default" role="button">Learn More</a>
+
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                }
+                ?>
             </div>
-        </div>
-    <?php
-    }
-    ?>
-</div>
 
             <!-- Teachers -->
             <div class="row">

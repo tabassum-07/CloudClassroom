@@ -16,7 +16,7 @@ $userid = $_SESSION["umail"];
         <div class="col-md-12">
             <h3 class="page-header">Welcome <a href="welcomeadmin">Admin</a></h3>
 
-            <h3 class="page-header">Course Details</h3>
+            <h3 class="page-header">Modules</h3>
 
             <?php
             // Include your database connection file
@@ -54,7 +54,7 @@ $userid = $_SESSION["umail"];
             echo "<table class='table table-striped' style='width:100%'>
             <tr>
               <th>SL</th>
-               <th>Course Name</th>
+               <th>Module Name</th>
                <th>Category</th>
                <th>Description</th>
                <th>Edit</th>
@@ -76,7 +76,7 @@ $userid = $_SESSION["umail"];
             ?>
 
             <!-- Add New Course Button -->
-            <a href="addnewcourse.php"><button type="button" class="btn btn-success">Add New Course</button></a>
+            <a href="addnewcourse.php"><button type="button" class="btn btn-success">Add New Module</button></a>
         </div>
     </div>
 </div>

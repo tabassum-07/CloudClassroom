@@ -14,7 +14,7 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8">
+		<div class="col-md-10 col-md-offset-1">
 			<h3><a href="welcomestudent.php"><span style='color:red'><?php echo $userfname . " " . $userlname; ?></span></a></h3>
 
 				<?php
@@ -27,14 +27,10 @@
 				while ($row = mysqli_fetch_array($rs)) {
 				?>
 					<tr>
-						<td>
-							<h2>Title: <?PHP echo $row['V_Title']; ?></h2>
-						</td>
+						<td><h2>Title: <?PHP echo $row['V_Title']; ?></h2></td>
 						<br>
 
-						<td>
-							<?PHP echo $row['V_Url']; ?>
-						</td>
+						<td><?PHP echo $row['V_Url']; ?></td>
 						<br>
 						<td>
 							<p> Video Description <?PHP echo $row['V_Remarks']; ?> </p>
